@@ -39,5 +39,5 @@ jobs:
         git config --global user.name "Bot Reservas"
         git config --global user.email "bot@github-actions.com"
         git add historial_vistas.txt
-        git commit -m "🤖 Memoria actualizada automáticamente" || echo "No hay reservas nuevas para guardar"
+        git commit -m "🤖 Memoria actualizada automáticamente" || true
         git push

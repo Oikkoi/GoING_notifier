@@ -7,7 +7,7 @@ from email.message import EmailMessage
 def enviar_correo(nuevas_reservas):
     # Si por alguna razón llega una lista vacía, no hacemos nada
     if not nuevas_reservas:
-        print("Sin nuevas reservas para enviar un correo")
+        print("sin reservas nuevas que enviar")
         return
     print("construyendo el correo...")
     # --- TUS CREDENCIALES ---
