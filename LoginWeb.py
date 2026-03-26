@@ -27,7 +27,7 @@ def login(user: str, password: str):
     campo_clave.send_keys(password)
     campo_clave.send_keys(Keys.RETURN)
     time.sleep(2)
-
+    print("logged in")
     return driver
 
 
@@ -69,4 +69,7 @@ def extraer_reservas(driver: webdriver):
                 "hora": hora
             }
             lista_reservas.append(reserva)
+        print("conseguidas las reservas")
+        for i in lista_reservas:
+            print(i)
     return (lista_reservas)
