@@ -1,0 +1,28 @@
+name: 🧹 Limpiar Memoria del Bot
+
+on:
+  workflow_dispatch: # Esto es lo que crea el botón de ejecución manual
+
+permissions:
+  contents: write # Permiso para sobreescribir el archivo
+
+jobs:
+  vaciar_historial:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Clonar el código
+      uses: actions/checkout@v4
+
+    - name: 🗑️ Vaciar el archivo txt
+      run: |
+        # Esto reemplaza todo el contenido del archivo con texto vacío
+        echo "" > historial_vistas.txt 
+
+    - name: 💾 Guardar el archivo vacío en GitHub
+      run: |
+        git config --global user.name "Bot Limpiador"
+        git config --global user.email "bot@github-actions.com"
+        git add historial_vistas.txt
+        git commit -m "🧹 Historial reseteado a cero (forzado)" || echo "El historial ya estaba vacío"
+        git push

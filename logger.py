@@ -2,6 +2,7 @@ import os
 
 
 def filtrar_reservas(lista_extraida):
+    print("iniciando filtro de reservas...")
     directorio_script = os.path.dirname(os.path.abspath(__file__))
     archivo_historial = os.path.join(directorio_script, "historial_vistas.txt")
     reservas_ya_vistas = []
@@ -31,5 +32,5 @@ def filtrar_reservas(lista_extraida):
     with open(archivo_historial, "w", encoding="utf-8") as archivo:
         for id_unico in memoria_actualizada:
             archivo.write(id_unico + "\n")
-    print("reservas filtradas")
+    print("terminado el filtro!")
     return nuevas_reservas

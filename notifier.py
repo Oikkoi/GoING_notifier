@@ -3,11 +3,13 @@ import smtplib
 import os
 from email.message import EmailMessage
 
+
 def enviar_correo(nuevas_reservas):
     # Si por alguna razón llega una lista vacía, no hacemos nada
     if not nuevas_reservas:
+        print("sin reservas nuevas que enviar")
         return
-
+    print("construyendo el correo...")
     # --- TUS CREDENCIALES ---
     email_origen = os.environ.get("GMAIL_SENDER")
     # Recuerda: Esta es la "Contraseña de aplicación" de 16 letras de Google, NO tu clave normal
